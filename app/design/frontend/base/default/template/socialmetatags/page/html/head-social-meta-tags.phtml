@@ -1,0 +1,31 @@
+<?php
+/*
+ *
+ * If we're on a product page, serve some social media sharing enabling tags
+ *
+ */
+if($product = Mage::registry('current_product')) {
+	$store_name = htmlentities(Mage::app()->getStore()->getFrontendName());
+	$product_name = htmlentities($product->getName());
+	$product_short_description = htmlentities($product->getShortDescription());
+	$page_url = $this->helper('core/url')->getCurrentUrl();
+	$image_url = $product->getImageUrl();
+	?>
+
+	<!-- Open Graph Tags -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="<?php echo $store_name ?>" />
+	<meta property="og:title" content="<?php echo $product_name ?>" />
+	<meta property="og:description" content="<?php echo $product_short_description ?>" />
+	<meta property="og:url" content="<?php echo $page_url ?>" />
+	<meta property="og:image" content="<?php echo $image_url ?>" />
+
+	<!-- Twitter Card Tags -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="<?php echo $product_name ?>">
+	<meta name="twitter:description" content="<?php echo $product_short_description ?>">
+	<meta name="twitter:image" content="<?php echo $image_url ?>">
+	<?php /* <meta name="twitter:site" content="@site_twitter_handle"> */ ?>
+<?php
+}
+?>

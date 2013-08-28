@@ -1,0 +1,10 @@
+app/code/local/MobWeb/SocialMetaTags app/code/local/MobWeb/SocialMetaTags/
+
+app/design/frontend/base/default/template/socialmetatags/ app/design/frontend/base/default/template/socialmetatags/
+
+app/design/frontend/base/default/layout/MobWeb_SocialMetaTags.xml app/design/frontend/base/default/layout/MobWeb_SocialMetaTags.xml
+
+app/etc/modules/MobWeb_SocialMetaTags.xml app/etc/modules/MobWeb_SocialMetaTags.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"
