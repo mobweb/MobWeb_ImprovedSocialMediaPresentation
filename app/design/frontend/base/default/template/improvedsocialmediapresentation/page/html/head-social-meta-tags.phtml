@@ -10,15 +10,25 @@ if($product = Mage::registry('current_product')) {
 	$product_short_description = htmlentities($product->getShortDescription());
 	$page_url = $this->helper('core/url')->getCurrentUrl();
 	$image_url = $product->getImageUrl();
+	$product_price = $product->getPrice();
+	$currency = Mage::app()->getStore()->getCurrentCurrencyCode();
+	$manufacturer = $product->getAttributeText('manufacturer');
+	$availability = $product->isAvailable() ? 'instock' : 'oos';
 	?>
 
-	<!-- Open Graph Tags -->
-	<meta property="og:type" content="website"/>
+	<!-- Open Graph Tags (Covers FB, Pinterest & Google+) -->
+	<meta property="og:type" content="product"/>
 	<meta property="og:site_name" content="<?php echo $store_name ?>" />
 	<meta property="og:title" content="<?php echo $product_name ?>" />
 	<meta property="og:description" content="<?php echo $product_short_description ?>" />
 	<meta property="og:url" content="<?php echo $page_url ?>" />
 	<meta property="og:image" content="<?php echo $image_url ?>" />
+	<meta property="og:price:amount" content="<?php echo $product_price ?>" />
+	<meta property="og:price:currency" content="<?php echo $currency ?>" />
+	<meta property="og:availability" content="<?php echo $availability ?>" />
+	<?php if($manufacturer) { ?>
+		<meta property="og:brand" content="<?php echo $manufacturer ?>" />
+	<?php } ?>
 
 	<!-- Twitter Card Tags -->
 	<meta name="twitter:card" content="summary">

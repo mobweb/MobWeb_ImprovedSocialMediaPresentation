@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_ImprovedSocialMediaPresentation>
+            <version>0.1.0</version>
+        </MobWeb_ImprovedSocialMediaPresentation>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <MobWeb_ImprovedSocialMediaPresentation>
+                    <file>MobWeb_ImprovedSocialMediaPresentation.xml</file>
+                </MobWeb_ImprovedSocialMediaPresentation>
+            </updates>
+        </layout>
+    </frontend>
+</config>

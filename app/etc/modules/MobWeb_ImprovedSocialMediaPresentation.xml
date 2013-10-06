@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <MobWeb_SocialMetaTags>
+        <MobWeb_ImprovedSocialMediaPresentation>
             <active>true</active>
             <codePool>local</codePool>
-        </MobWeb_SocialMetaTags>
+        </MobWeb_ImprovedSocialMediaPresentation>
     </modules>
 </config>

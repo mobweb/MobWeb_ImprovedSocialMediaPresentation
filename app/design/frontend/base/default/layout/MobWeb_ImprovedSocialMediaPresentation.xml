@@ -2,7 +2,7 @@
 <layout version="0.1.0">
 	<catalog_product_view translate="label">
 		<reference name="head">
-            <block type="core/template" name="head-social-meta-tags" template="socialmetatags/page/html/head-social-meta-tags.phtml" />
+            <block type="core/template" name="head-social-meta-tags" template="improvedsocialmediapresentation/page/html/head-social-meta-tags.phtml" />
         </reference>
     </catalog_product_view>
 </layout>
