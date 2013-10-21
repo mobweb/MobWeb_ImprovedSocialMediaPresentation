@@ -12,7 +12,7 @@ if($product = Mage::registry('current_product')) {
 	$image_url = $product->getImageUrl();
 	$product_price = $product->getPrice();
 	$currency = Mage::app()->getStore()->getCurrentCurrencyCode();
-	$manufacturer = $product->getAttributeText('manufacturer');
+	$manufacturer = $product->getData('manufacturer') ? $product->getAttributeText('manufacturer') : NULL;
 	$availability = $product->isAvailable() ? 'instock' : 'oos';
 	?>
 
