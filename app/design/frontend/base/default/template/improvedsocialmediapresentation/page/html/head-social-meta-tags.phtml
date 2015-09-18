@@ -7,7 +7,7 @@
 if($product = Mage::registry('current_product')) {
 	$store_name = htmlentities(Mage::app()->getStore()->getFrontendName());
 	$product_name = htmlentities($product->getName());
-	$product_short_description = htmlentities($product->getShortDescription());
+	$product_description = $product->getShortDescription() ? strip_tags($product->getShortDescription()) : strip_tags($product->getDescription());
 	$page_url = $this->helper('core/url')->getCurrentUrl();
 	$image_url = $product->getImageUrl();
 	$product_price = $product->getPrice();
@@ -20,7 +20,7 @@ if($product = Mage::registry('current_product')) {
 	<meta property="og:type" content="product"/>
 	<meta property="og:site_name" content="<?php echo $store_name ?>" />
 	<meta property="og:title" content="<?php echo $product_name ?>" />
-	<meta property="og:description" content="<?php echo $product_short_description ?>" />
+	<meta property="og:description" content="<?php echo $product_description ?>" />
 	<meta property="og:url" content="<?php echo $page_url ?>" />
 	<meta property="og:image" content="<?php echo $image_url ?>" />
 	<meta property="og:price:amount" content="<?php echo $product_price ?>" />
@@ -33,7 +33,7 @@ if($product = Mage::registry('current_product')) {
 	<!-- Twitter Card Tags -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="<?php echo $product_name ?>">
-	<meta name="twitter:description" content="<?php echo $product_short_description ?>">
+	<meta name="twitter:description" content="<?php echo $product_description ?>">
 	<meta name="twitter:image" content="<?php echo $image_url ?>">
 	<?php /* <meta name="twitter:site" content="@site_twitter_handle"> */ ?>
 <?php
